@@ -7,17 +7,19 @@ import javax.persistence.*;
 public class TripBooking{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    int tripBookingId;
+   private int tripBookingId;
 
-    String fromLocation;
+    private String fromLocation;
 
     String toLocation;
 
     int distanceInKm;
 
-    TripStatus status;
 
-    int bill;
+   @Enumerated(value = EnumType.STRING)
+  private TripStatus status;
+
+   private int bill;
 
 
     //For mapping to customer(parent)
@@ -31,6 +33,7 @@ public class TripBooking{
     Driver driver;
 
     public TripBooking() {
+
 
     }
 
